@@ -9,7 +9,8 @@ import CreateUserDto from 'src/users/dtos/CreateUser.dto';
 
 @Injectable()
 export class ValidateCreateUserPipe implements PipeTransform {
-  transform(value: CreateUserDto, metadata: ArgumentMetadata) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  transform(value: CreateUserDto, _metadata: ArgumentMetadata) {
     const parseAgeToInt = parseInt(value.age.toString());
     if (isNaN(parseAgeToInt)) {
       console.log(`${value.age} is not a number`);
