@@ -62,7 +62,7 @@ export class UsersController {
 
   @Get('filter')
   filterUser(@Query('sortDesc', ParseBoolPipe) sortDesc: string) {
-    console.log(typeof sortDesc);
+    console.log(`everything fine ${sortDesc}`);
     [
       {
         user: 'ta',
