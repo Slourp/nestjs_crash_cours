@@ -1,8 +1,9 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Req, Res } from '@nestjs/common';
+import { Request, Response } from 'express';
 
 @Controller('users')
 export class UsersController {
-  @Get('')
+  @Get()
   getUsers() {
     return [
       {
@@ -12,7 +13,7 @@ export class UsersController {
     ];
   }
 
-  @Get('posts')
+  @Get('users/posts')
   getUsersPosts() {
     return [
       {
@@ -24,5 +25,11 @@ export class UsersController {
         title: 'popo',
       },
     ];
+  }
+
+  @Post('create')
+  createUser(@Req() request: Request, @Res() response: Response) {
+    console.log(request.body);
+    response.send('A user has been created');
   }
 }
