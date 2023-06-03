@@ -1,7 +1,7 @@
-import { AnotherMiddlewareMiddleware } from './another-middleware.middleware';
+import { AnotherMiddleware } from './another.middleware';
 
 describe('AnotherMiddlewareMiddleware', () => {
   it('should be defined', () => {
-    expect(new AnotherMiddlewareMiddleware()).toBeDefined();
+    expect(new AnotherMiddleware()).toBeDefined();
   });
 });
